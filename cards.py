@@ -7,4 +7,4 @@ class Card(object):
         self.number=number
 
     def toString(self):
-        print(str(self.color) + " " + str(self.number))    
+        return str(self.color) + "-" + str(self.number)    
