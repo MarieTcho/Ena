@@ -1,5 +1,3 @@
-
-
 class Card(object):
     
     def __init__(self, color, number) :

@@ -1,0 +1,13 @@
+#hand{
+    position: absolute;
+    background-color: #f98300;
+    width: 105%;
+    height: 35%;
+    top: 65%;
+    left:-1%;
+}
+
+body{
+    background-color: #e32e03;
+    overflow: hidden;
+}
