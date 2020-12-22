@@ -8,13 +8,72 @@
     </head>
 
     <body>
-        <div class="main">
-
-            <div id="hand">
-                <div class="card">
-                    <img class="card-img"  src="./static/card-color.png" />
+        <div class="main" id="main">
+            <div id="hand-adversary">
+                <div class="container-adversary">
+                    <div class="card-adversary"  draggable="false" >
+                        <img class="card-img"  src="./static/cards/MA.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container-adversary">
+                    <div class="card-adversary"  draggable="false" >
+                        <img class="card-img"  src="./static/cards/MA.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container-adversary">
+                    <div class="card-adversary"  draggable="false" >
+                        <img class="card-img"  src="./static/cards/MA.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container-adversary">
+                    <div class="card-adversary"  draggable="false" >
+                        <img class="card-img"  src="./static/cards/MA.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container-adversary">
+                    <div class="card-adversary"  draggable="false" >
+                        <img class="card-img"  src="./static/cards/MA.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container-adversary">
+                    <div class="card-adversary"  draggable="false" >
+                        <img class="card-img"  src="./static/cards/MA.png" draggable="false" />
+                    </div>
                 </div>
             </div>
+
+            <button id="draw_card">Pioche</button>
+            <button id="pass_turn">Passer son tour</button>
+            <div id="pot" ondrop="drop_pot(event)" ondragover="allowDrop(event)" draggable="false">
+                <div class="card card-0" id="hand-0-1" draggable="false" ondragstart="drag(event)">
+                    <img class="card-img"  src="./static/cards/1.png" draggable="false" />
+                </div>
+            </div>
+            <div id="hand">
+                
+                <!--<div class="container">
+                    <div class="card card-0" id="hand-0-1" draggable="true" ondragstart="drag(event)">
+                        <img class="card-img"  src="./static/cards/1.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card card-1" id="hand-1-2" draggable="true" ondragstart="drag(event)">
+                        <img class="card-img"  src="./static/cards/2.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card card-2" id="hand-2-3" draggable="true" ondragstart="drag(event)">
+                        <img class="card-img"  src="./static/cards/3.png" draggable="false" />
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card card-3" id="hand-3-4" draggable="true" ondragstart="drag(event)">
+                        <img class="card-img"  src="./static/cards/4.png" draggable="false" />
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
         </div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
         <script src="./static/app.js"></script>

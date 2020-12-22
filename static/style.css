@@ -1,24 +1,68 @@
 #hand{
     position: absolute;
     background-color: #f98300;
-    width: 105%;
-    height: 35%;
     top: 65%;
     left:-1%;
+    bottom:-1%;
+    right:-1%;
+}
+
+#hand-adversary{
+    position: absolute;
+    background-color: #f98300;
+    top: -1%;
+    left:20%;
+    bottom:83%;
+    right:30%;
+}
+.card-adversary{
+    top: 5%;
+    width:75px; 
+    height: 132px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.container-adversary{
+    left: 10%;
+    top: 5%;
+    position: relative;
+    padding-right: 30px;
+    display: inline-block;
 }
 
 body{
     background-color: #e32e03;
     overflow: hidden;
+    padding-bottom: 56.25%;
+}
+
+img{
+    border-radius: 10px 10px 10px 10px;
 }
 
 .card{
-    bottom: 5%;
     top: 5%;
-    left: 20%;
-    right:70%;
+    width:150px; 
+    height: 263px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#pot{
+    top: 25%;
+    left:40%;
+    width:150px; 
+    height: 263px;
+    border-style: solid;
     position: absolute;
-    
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+.container{
+    left: 10%;
+    position: relative;
+    padding-right: 30px;
+    display: inline-block;
 }
 
 .card-img{
@@ -39,3 +83,18 @@ body{
 
 }
 
+.card-0{
+    background-color:red
+}
+
+.card-1{
+    background-color: gold;
+}
+
+.card-2{
+    background-color: navy;
+}
+
+.card-3{
+    background-color: green;
+}
