@@ -16,6 +16,8 @@ d=Deck()
 current_player=[0]
 
 current_card = [d.draw()]
+while current_card[0].number>=10 :
+    current_card = [d.draw()]
 
 new_player_id = [0]
 player_list=[]
@@ -45,7 +47,13 @@ def handle_join(data):
 @socketio.on('change_pot')
 def handle_change_pot(data):
     data_table = data.split('-')
-    current_card[0]=Card(data_table[0], data_table[1])
+    current_card[0]=Card(int(data_table[0]), int(data_table[1]))
+    if current_card[0].number==10 :
+        emit("draw_two", str((int(current_player[0]) + 1)% new_player_id[0]), broadcast=True)
+
+    if current_card[0].number==11 :
+        emit("card_pass", str((int(current_player[0]) + 1)% new_player_id[0]), broadcast=True)
+
     emit("change_pot", str(current_card[0].color)+"-"+str(current_card[0].number), broadcast=True)
 
 

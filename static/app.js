@@ -230,3 +230,20 @@ socket.on("card_number", function(data){
     }
   }
 });
+
+socket.on("draw_two", function(data){
+  if(data == player_number) {
+    hand.pick();
+    hand.pick();
+  }
+});
+
+socket.on("card_pass", function(data) {
+  console.log(data);
+  console.log(player_number);
+  if(data == player_number) {
+    socket.emit("pass_turn", player_number);
+    console.log("PASSE TON TOUR");
+    setTimeout(function(){socket.emit("pass_turn", player_number);}, 1000);
+  }
+});

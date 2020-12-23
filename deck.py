@@ -11,8 +11,9 @@ class Deck(object):
 
     def start(self):
         for color in range(4):
-            for number in range(10):    
+            for number in range(12):    
                 self.deck.append(Card(color,number))
+        
             
     def toString(self):
         for card in self.deck : 
