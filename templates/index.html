@@ -9,6 +9,9 @@
 
     <body>
         <div class="main" id="main">
+
+              
+
             <div id="hand-adversary">
                 <div class="container-adversary">
                     <div class="card-adversary"  draggable="false" >
@@ -42,13 +45,27 @@
                 </div>
             </div>
 
-            <button id="draw_card">Pioche</button>
-            <button id="pass_turn">Passer son tour</button>
-            <div id="pot" ondrop="drop_pot(event)" ondragover="allowDrop(event)" draggable="false">
-                <div class="card card-0" id="hand-0-1" draggable="false" ondragstart="drag(event)">
-                    <img class="card-img"  src="./static/cards/1.png" draggable="false" />
+            
+            
+
+            <div id="pot-and-deck">
+                <div id="pot-container" draggable="false">
+                    <div id="pot" ondrop="drop_pot(event)" ondragover="allowDrop(event)" draggable="false">
+                        <div class="card card-0" id="hand-0-1" draggable="false" ondragstart="drag(event)">
+                            <img class="card-img"  src="./static/cards/1.png" draggable="false" />
+                        </div>
+                    </div>
                 </div>
+
+                <div id="pot-container" draggable="false">
+                    <button id="draw_card">
+                        <img class="deck-card"  src="./static/cards/MA.png" draggable="false" />
+                    </button>
+                </div>
+
+                     
             </div>
+
             <div id="hand">
                 
                 <!--<div class="container">
@@ -71,8 +88,10 @@
                         <img class="card-img"  src="./static/cards/4.png" draggable="false" />
                     </div>
                 </div>-->
-
+                
             </div>
+
+            <button id="pass_turn">PASSER LE TOUR</button>  
         </div>
         </div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>

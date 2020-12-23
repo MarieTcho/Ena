@@ -15,7 +15,7 @@ d=Deck()
 
 current_player=[0]
 
-current_card = [Card(2,9)]
+current_card = [d.draw()]
 
 new_player_id = [0]
 player_list=[]

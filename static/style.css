@@ -22,6 +22,35 @@
     border-radius: 10px 10px 10px 10px;
 }
 
+.deck-card{
+    width:150px; 
+    height: 263px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#draw-card{
+    width:150px; 
+    height: 263px;
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    background: none;
+}
+
+#pass_turn{
+    position: absolute;
+    width:200px; 
+    height: 50px;
+    border-radius: 10px 10px 10px 10px;
+    top: 35%;
+    left: 60%;
+    font: small-caps bold 25px/1 sans-serif;
+}
+
+#pot-container{
+    padding-right: 30px;
+    display: inline-block;
+}
+
 .container-adversary{
     left: 10%;
     top: 5%;
@@ -47,16 +76,23 @@ img{
     border-radius: 10px 10px 10px 10px;
 }
 
+
 #pot{
-    top: 25%;
-    left:40%;
+    
     width:150px; 
     height: 263px;
     border-style: solid;
-    position: absolute;
     border-radius: 10px 10px 10px 10px;
+    
 }
 
+#pot-and-deck{
+    top: 25%;
+    left:30%;
+    position: absolute;
+    width: 100%;
+    height: 270px;
+}
 
 .container{
     left: 10%;
