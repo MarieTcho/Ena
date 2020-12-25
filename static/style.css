@@ -20,6 +20,7 @@
     width:75px; 
     height: 132px;
     border-radius: 10px 10px 10px 10px;
+    box-shadow: 7px 7px ;
 }
 
 .deck-card{
@@ -74,6 +75,7 @@ img{
     width:150px; 
     height: 263px;
     border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px ;
 }
 
 

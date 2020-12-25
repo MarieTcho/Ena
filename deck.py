@@ -13,6 +13,9 @@ class Deck(object):
         for color in range(4):
             for number in range(12):    
                 self.deck.append(Card(color,number))
+        for color in range(4):
+            for number in range(12):    
+                self.deck.append(Card(color,number))
         
         self.deck.append(Card(5,12))
         self.deck.append(Card(5,12))

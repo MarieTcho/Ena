@@ -107,7 +107,6 @@ function drop_pot(ev) {
     color_window = window.open(document.URL + "colorselect", "Color Picker", "height=120,width=200");
     color_window.onbeforeunload = function(){
       socket.emit("pass_turn", player_number);
-      console.log("test")
     };
   }
   else{
