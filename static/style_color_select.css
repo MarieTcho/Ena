@@ -1,0 +1,25 @@
+.color-btn{
+
+    width: 50px;
+    height: 50px;
+}
+
+#btn-0{
+    background-color: red;
+}
+
+#btn-1{
+    background-color: gold;
+}
+
+#btn-2{
+    background-color:navy;
+}
+
+#btn-3{
+    background-color: green;
+}
+
+body{
+    background-color: #e32e03;
+}

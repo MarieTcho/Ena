@@ -14,6 +14,10 @@ class Deck(object):
             for number in range(12):    
                 self.deck.append(Card(color,number))
         
+        self.deck.append(Card(5,12))
+        self.deck.append(Card(5,12))
+        self.deck.append(Card(5,12))
+        self.deck.append(Card(5,12))
             
     def toString(self):
         for card in self.deck : 

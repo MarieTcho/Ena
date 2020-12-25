@@ -4,6 +4,7 @@ var current_draged_card ;
 var current_container ;
 var player_number;
 var turn=false;
+var color_window;
 
 window.resizeTo(1920, 1080);
 
@@ -102,8 +103,16 @@ function drop_pot(ev) {
   var curr_table = current_draged_card.id.split("-");
   socket.emit("change_pot", curr_table[1]+"-"+curr_table[2]);
 
-  socket.emit("pass_turn", player_number);
-
+  if(curr_table[2]==12){
+    color_window = window.open(document.URL + "colorselect", "Color Picker", "height=120,width=200");
+    color_window.onbeforeunload = function(){
+      socket.emit("pass_turn", player_number);
+      console.log("test")
+    };
+  }
+  else{
+    socket.emit("pass_turn", player_number);
+  }
   for(var classname of current_draged_card.classList){
     if(classname.split("-")[0]==="pos"){
       
@@ -123,7 +132,7 @@ function checkAllowed(id){
 
       var next_table = id.split("-");
 
-      return (next_table[1]===curr_table[1] || next_table[2]===curr_table[2]);
+      return (next_table[1]===curr_table[1] || next_table[2]===curr_table[2] || next_table[1]==5);
     }
   }
 
@@ -150,9 +159,6 @@ function updateDragRights(){
 
 // MAIN
 
-
-
-
 var hand = new Hand();
 
 socket.emit('join',"test");
@@ -164,6 +170,8 @@ socket.on('join', function(id){
   for(var i=0; i<6; ++i) {
     hand.pick();
   }
+
+  hand.add(new Card(5,12));
   hand.draw();
 });
 
@@ -247,3 +255,5 @@ socket.on("card_pass", function(data) {
     setTimeout(function(){socket.emit("pass_turn", player_number);}, 1000);
   }
 });
+
+

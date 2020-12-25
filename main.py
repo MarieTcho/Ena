@@ -34,7 +34,10 @@ def change_val(var, val):
 
 @socketio.on('join')
 def handle_join(data):
-    if new_player_id[0]<=1:
+
+    if data == "color_popup":
+        emit("join")
+    elif new_player_id[0]<=1 :
         emit("join",new_player_id[0])
         emit("change_pot", str(current_card[0].color)+"-"+str(current_card[0].number))
         player_list.append(Player(new_player_id[0]))
@@ -49,6 +52,10 @@ def handle_change_pot(data):
     data_table = data.split('-')
     current_card[0]=Card(int(data_table[0]), int(data_table[1]))
     if current_card[0].number==10 :
+        emit("draw_two", str((int(current_player[0]) + 1)% new_player_id[0]), broadcast=True)
+
+    if current_card[0].number==12 :
+        emit("draw_two", str((int(current_player[0]) + 1)% new_player_id[0]), broadcast=True)
         emit("draw_two", str((int(current_player[0]) + 1)% new_player_id[0]), broadcast=True)
 
     if current_card[0].number==11 :
@@ -74,9 +81,22 @@ def handle_pass_turn(data) :
 def handle_card_number(data):
     emit("card_number", data, broadcast=True)
 
+
+@socketio.on("chosen_color")
+def handle_chosen_color(data):
+    print("test")
+    current_card[0]=Card(int(data),20)
+    emit("change_pot", str(current_card[0].color)+"-"+str(current_card[0].number), broadcast=True)
+
+
 @APP.route('/')
 def index():
     return flask.render_template('index.html')
+
+@APP.route('/colorselect')
+def color_select():
+    return flask.render_template('color_select.html')
+
 
 if __name__ == '__main__':
     APP.debug = True
